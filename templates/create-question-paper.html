@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>IntelliMood | EDUNEX</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/upload.css') }}">
+</head>
+
+<body>
+{% extends "base.html" %}
+
+{% block title %}Study Planner | EDUNEX{% endblock %}
+
+{% block content %}
+<div class="container">
+
+    <h1>IntelliMood</h1>
+    <p class="tagline">Smart learning that adapts to how you feel.</p>
+
+    <h3>How are you feeling today?</h3>
+
+    <!-- Mood Buttons -->
+    <div class="mood-buttons">
+        <button onclick="setMood('focused')"> Focused</button>
+        <button onclick="setMood('tired')"> Tired</button>
+        <button onclick="setMood('stressed')"> Stressed</button>
+        <button onclick="setMood('motivated')"> Motivated</button>
+    </div>
+
+    <!-- RESULT SECTION -->
+    <div class="result-box" id="resultBox">
+
+        <!-- AI Thinking Animation -->
+        <div class="ai-thinking" id="aiThinking">
+             Analyzing your mood...
+        </div>
+
+        <!-- Recommendation Cards -->
+        <div class="recommendations" id="recommendations">
+
+            <div class="card">
+                <h3> Suggested Subject</h3>
+                <p id="subject"></p>
+            </div>
+
+            <div class="card">
+                <h3> Difficulty Level</h3>
+                <p id="difficulty"></p>
+            </div>
+
+            <div class="card">
+                <h3> Study Strategy</h3>
+                <p id="strategy"></p>
+            </div>
+
+            <div class="card">
+                <h3> Motivation</h3>
+                <p id="quote"></p>
+            </div>
+
+        </div>
+
+        <!-- Circular Animated Timer -->
+        <div class="circle">
+            <svg>
+                <circle cx="70" cy="70" r="60"></circle>
+                <circle cx="70" cy="70" r="60" id="progress"></circle>
+            </svg>
+            <div class="time-text" id="timer">0</div>
+        </div>
+
+        <!-- Mood Analytics -->
+        <div class="analytics">
+            <h3> Your Most Frequent Mood</h3>
+            <p id="mostMood"></p>
+        </div>
+
+    </div>
+
+    <!-- Back Button -->
+    <a href="{{ url_for('dashboard') }}" class="back-btn">
+        ← Back to Dashboard
+    </a>
+
+</div>
+
+<!-- JavaScript -->
+<script src="{{ url_for('static', filename='js/upload.js') }}" defer></script>
+{% endblock  %}
+</body>
+</html>

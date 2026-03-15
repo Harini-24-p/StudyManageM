@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<title>EDUNEX | Performance Analytics</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/performance.css') }}">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+    {% extends "base.html" %}
+
+{% block title %}Study Planner | EDUNEX{% endblock %}
+
+{% block content %}
+
+<div class="container">
+
+<h2>Student Performance Dashboard</h2>
+<p>Weekly analysis of quiz activity</p>
+
+<!-- Score Chart -->
+<div class="chart-box">
+<h3>Quiz Score Trend</h3>
+<canvas id="scoreChart"></canvas>
+</div>
+
+<!-- Login Chart -->
+<div class="chart-box">
+<h3>Login Activity</h3>
+<canvas id="loginChart"></canvas>
+</div>
+
+
+
+<a href="{{ url_for('dashboard') }}">
+<button class="back-btn">Back to Dashboard</button>
+</a>
+
+<div class="motivation">
+Keep pushing! Consistency builds success.
+</div>
+
+</div>
+
+<script>
+
+fetch("/performance_data")
+.then(res => res.json())
+.then(data => {
+
+let days = data.quiz_scores.map(x => x.day)
+let scores = data.quiz_scores.map(x => x.percentage)
+
+let loginDays = data.login_counts.map(x => x.day)
+let logins = data.login_counts.map(x => x.login_count)
+
+/* Example accuracy calculation */
+let accuracy = scores.map(score => score)
+
+/* ================= SCORE CHART ================= */
+
+new Chart(document.getElementById("scoreChart"),{
+
+type:"line",
+
+data:{
+labels:days,
+datasets:[{
+label:"Quiz Score %",
+data:scores,
+borderColor:"#4a6cf7",
+backgroundColor:"rgba(74,108,247,0.1)",
+fill:true,
+tension:0.4
+}]
+}
+
+})
+
+
+/* ================= LOGIN CHART ================= */
+
+new Chart(document.getElementById("loginChart"),{
+
+type:"bar",
+
+data:{
+labels:loginDays,
+datasets:[{
+label:"Login Count",
+data:logins,
+backgroundColor:"#2ecc71"
+}]
+}
+
+})
+
+
+/* ================= ACCURACY CHART ================= */
+
+new Chart(document.getElementById("accuracyChart"),{
+
+type:"line",
+
+data:{
+labels:days,
+datasets:[{
+label:"Accuracy %",
+data:accuracy,
+borderColor:"#ff7f50",
+backgroundColor:"rgba(255,127,80,0.1)",
+fill:true,
+tension:0.4
+}]
+}
+
+})
+
+})
+
+</script>
+{% endblock  %}
+</body>
+</html>

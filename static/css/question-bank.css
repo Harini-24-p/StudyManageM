@@ -1,0 +1,302 @@
+/* ===== BODY ===== */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+/* ===== MAIN CONTAINER ===== */
+.bank-container {
+  background: #ffffff;
+  width: 100%;
+  max-width: 900px;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== HEADER ===== */
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.header h2 {
+  margin: 0;
+  font-size: 28px;
+  color: #1e3c72;
+}
+
+.header p {
+  color: #666;
+  font-size: 14px;
+}
+
+/* ===== FLASH MESSAGE ===== */
+.alert-message {
+  background: #e3f2fd;
+  color: #0d47a1;
+  padding: 12px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* ===== SEARCH ===== */
+.search-box {
+  margin-bottom: 25px;
+  display: flex;
+  gap: 10px;
+}
+
+.search-box input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+.search-box button {
+  padding: 10px 18px;
+  border-radius: 10px;
+  border: none;
+  background: #1976d2;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.search-box button:hover {
+  background: #0d47a1;
+}
+
+/* ===== UPLOAD SECTION ===== */
+.upload-box {
+  background: #f9fbff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
+  margin-bottom: 30px;
+}
+
+.upload-box h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.upload-box form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.upload-box input {
+  flex: 1 1 200px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+.upload-box button {
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  background: #1565c0;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.upload-box button:hover {
+  background: #0d47a1;
+}
+
+/* ===== PAPER LIST ===== */
+.paper-list h3 {
+  margin-bottom: 20px;
+}
+
+/* ===== PAPER CARD ===== */
+.paper-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.paper-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+}
+
+.paper-info p {
+  margin: 5px 0;
+  color: #333;
+}
+
+/* ===== ACTION BUTTONS ===== */
+.paper-actions {
+  margin-top: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.paper-actions a {
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: 0.3s ease;
+  color: white;
+}
+
+.view-btn {
+  background: #42a5f5;
+}
+
+.view-btn:hover {
+  background: #1e88e5;
+}
+
+.download-btn {
+  background: #66bb6a;
+}
+
+.download-btn:hover {
+  background: #43a047;
+}
+
+.delete-btn {
+  background: #ef5350;
+}
+
+.delete-btn:hover {
+  background: #c62828;
+}
+
+/* ===== GENERATED QUESTIONS ===== */
+.generated-paper {
+  margin-top: 15px;
+  background: #f4f6f9;
+  padding: 15px;
+  border-radius: 12px;
+}
+
+.generated-paper h4 {
+  margin-top: 0;
+}
+
+.question-content {
+  white-space: pre-line;
+  font-size: 14px;
+  color: #333;
+}
+
+/* ===== BACK BUTTON ===== */
+.back-section {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.back-btn {
+  text-decoration: none;
+  font-weight: 600;
+  color: #1e3c72;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+
+  .bank-container {
+    padding: 25px;
+  }
+
+  .upload-box form {
+    flex-direction: column;
+  }
+
+  .paper-actions {
+    flex-direction: column;
+  }
+
+  .paper-actions a {
+    text-align: center;
+  }
+
+}
+/* Flash Message */
+.alert-message {
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  font-weight: 500;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+.alert-message.success {
+  background-color: #e6f7ec;
+  color: #1b5e20;
+  border: 1px solid #4caf50;
+}
+
+.alert-message.error {
+  background-color: #fdecea;
+  color: #b71c1c;
+  border: 1px solid #f44336;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+/* ================= PDF VIEWER DESIGN ================= */
+
+.pdf-viewer-section {
+  display: none;
+  margin-top: 30px;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.viewer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.viewer-header h3 {
+  margin: 0;
+  color: #0d47a1;
+}
+
+.close-btn {
+  background: #f44336;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#pdfFrame {
+  width: 100%;
+  height: 600px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

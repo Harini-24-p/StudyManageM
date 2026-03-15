@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AI Practice Test</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/practice.css') }}" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+{% extends "base.html" %}
+
+{% block title %}Study Planner | EDUNEX{% endblock %}
+
+{% block content %}
+  <div class="container">
+
+    <a href="{{ url_for('dashboard') }}" class="back-btn">
+        ← Back to Dashboard
+    </a>
+
+    <div class="card">
+      <h2> Practice Test</h2>
+      <p class="subtitle">Upload your answer sheet for AI evaluation</p>
+
+      <div class="upload-box">
+    <input type="file" id="answerSheet" accept=".pdf">
+    <label for="answerSheet">Click to Upload PDF</label>
+    <p id="fileName" class="file-name"></p>
+</div>
+
+<textarea id="syllabusText" placeholder="Enter syllabus keywords here..."></textarea>
+
+<button class="primary-btn" onclick="evaluateTest()">
+    Submit for Evaluation
+</button>
+
+      <div id="result" class="result"></div>
+    </div>
+
+  </div>
+
+  <script src="{{ url_for('static', filename='js/practice.js') }}" defer></script>
+{% endblock  %}
+</body>
+</html>

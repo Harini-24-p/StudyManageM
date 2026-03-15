@@ -1,0 +1,254 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    background: #fdf6ec;
+    display: flex;
+    justify-content: center;   /* Horizontal center */
+    align-items: center;       /* Vertical center */
+}
+
+/* Card */
+.planner-card {
+    width: 500px;
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 30px;
+    box-shadow: 0 15px 40px rgba(11, 47, 122, 0.2);
+    border-top: 6px solid #0b2f7a;
+}
+
+/* Header */
+.planner-header h1 {
+    color: #0b2f7a;
+    text-align: center;
+}
+
+.planner-header p {
+    text-align: center;
+    color: #777;
+    margin-bottom: 20px;
+}
+
+/* Progress Section */
+.progress-section {
+    margin-bottom: 20px;
+}
+
+.task-count {
+    font-size: 14px;
+    color: #0b2f7a;
+    margin-bottom: 5px;
+}
+.todoList li.completed {
+    text-decoration: line-through;
+    color: #555;
+    background: #e6f0ff !important;
+    transition: 0.4s ease;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 10px;
+    background: #f5e6d3;
+    border-radius: 10px;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 0%;
+    background: #0b2f7a;
+    border-radius: 10px;
+    transition: 0.4s ease;
+}
+
+/* Input Section */
+.input-section {
+    display: flex;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+#inputBox {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+#addBtn {
+    background: #0b2f7a;
+    color: #fff;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#addBtn:hover {
+    background: #09245e;
+}
+
+/* Task List */
+.todoList {
+    list-style: none;
+    margin-top: 10px;
+}
+
+.todoList li {
+    background: #f5e6d3;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.todoList li.completed {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+/* Action Buttons */
+.action-btn {
+    border: none;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-left: 5px;
+    font-size: 12px;
+}
+
+.edit-btn {
+    background: #0b2f7a;
+    color: white;
+}
+
+.delete-btn {
+    background: #d9534f;
+    color: white;
+}
+
+.delete-btn:hover {
+    background: #c9302c;
+}
+
+/* Notification */
+.notification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #0b2f7a;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    opacity: 0;
+    transition: 0.4s;
+}
+@keyframes pulseGlow {
+    0% { box-shadow: 0 0 5px rgba(11,47,122,0.3); }
+    50% { box-shadow: 0 0 20px rgba(11,47,122,0.8); }
+    100% { box-shadow: 0 0 5px rgba(11,47,122,0.3); }
+}
+
+.notification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #0b2f7a;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 10px;
+    opacity: 0;
+    transition: 0.4s ease;
+    font-weight: 500;
+}
+/* Back Button Container */
+.back-btn-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+/* Back Button */
+.back-btn {
+    background: #0b2f7a;
+    color: #fdf6ec;
+    padding: 10px 22px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 15px rgba(11, 47, 122, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hover Effect */
+.back-btn:hover {
+    background: #09245e;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(11, 47, 122, 0.4);
+}
+
+/* Click Effect */
+.back-btn:active {
+    transform: scale(0.95);
+}
+.completed {
+    text-decoration: line-through;
+    color: #888;
+}
+
+.task-buttons button {
+    margin-left: 8px;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.task-buttons button:nth-child(1) {
+    background: #1e3a8a; /* Edit - blue */
+    color: white;
+}
+
+.task-buttons button:nth-child(2) {
+    background: #16a34a; /* Complete - green */
+    color: white;
+}
+
+.task-buttons button:nth-child(3) {
+    background: #dc2626; /* Delete - red */
+    color: white;
+}
+
+.task-buttons button:disabled {
+    background: gray;
+    cursor: not-allowed;
+}
+/* Center Wrapper */
+.planner-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+}
+
+/* Planner Card */
+.planner-card {
+    width: 100%;
+    max-width: 800px;
+    background: white;
+    padding: 40px;
+    border-radius: 0px;   /* makes it perfect rectangle */
+ box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+}

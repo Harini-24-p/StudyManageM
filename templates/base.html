@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>{% block title %}EDUNEX{% endblock %}</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script src="https://unpkg.com/@phosphor-icons/web"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Inter',sans-serif;
+}
+
+body{
+  background:#f5f7fb;
+}
+
+.layout{
+  display:flex;
+}
+
+/* ================= SIDEBAR (Always Closed) ================= */
+
+.sidebar{
+  position:fixed;
+  left:0;
+  top:0;
+  width:80px; /* Always small */
+  height:100vh;
+  background:#0f172a;
+  padding:20px 10px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+/* Hide logo text */
+.logo-text{
+  display:none;
+}
+
+.logo{
+  width:40px;
+  margin-bottom:40px;
+}
+
+/* Navigation */
+.nav-links{
+  list-style:none;
+  width:100%;
+  text-align:center;
+}
+
+.nav-links li{
+  margin-bottom:20px;
+}
+
+.nav-links a{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:12px;
+  border-radius:10px;
+  text-decoration:none;
+  color:#cbd5e1;
+  transition:0.3s;
+}
+
+/* Hide text always */
+.nav-links span{
+  display:none;
+}
+
+.nav-links a i{
+  font-size:22px;
+}
+
+.nav-links a:hover{
+  background:#1e293b;
+  color:white;
+}
+
+/* Push logout bottom */
+.logout{
+  margin-top:auto;
+}
+
+/* ================= CONTENT ================= */
+
+.content{
+  margin-left:80px; /* Match sidebar width */
+  padding:40px;
+  width:100%;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+
+    <img src="{{ url_for('static', filename='img/logo.png') }}" class="logo">
+
+    <ul class="nav-links">
+
+      <li>
+        <a href="{{ url_for('create_question_paper') }}">
+          <i class="ph-bold ph-brain"></i>
+        </a>
+      </li>
+
+      <li>
+        <a href="{{ url_for('study_planner') }}">
+          <i class="ph-bold ph-book-open"></i>
+        </a>
+      </li>
+
+      <li>
+        <a href="{{ url_for('quiz') }}">
+          <i class="ph-bold ph-game-controller"></i>
+        </a>
+      </li>
+
+      <li>
+        <a href="{{ url_for('question_bank') }}">
+          <i class="ph-bold ph-folder-open"></i>
+        </a>
+      </li>
+
+      <li>
+        <a href="{{ url_for('practice') }}">
+          <i class="ph-bold ph-check-square"></i>
+        </a>
+      </li>
+
+      <li>
+        <a href="{{ url_for('performance') }}">
+          <i class="ph-bold ph-chart-line"></i>
+        </a>
+      </li>
+
+      <li class="logout">
+        <a href="{{ url_for('logout') }}">
+          <i class="ph-bold ph-sign-out"></i>
+        </a>
+      </li>
+
+    </ul>
+
+  </aside>
+
+  <!-- CONTENT -->
+  <main class="content">
+    {% block content %}
+    {% endblock %}
+  </main>
+
+</div>
+
+</body>
+</html>

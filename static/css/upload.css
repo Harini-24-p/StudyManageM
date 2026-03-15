@@ -1,0 +1,308 @@
+/* ================= BODY THEME ================= */
+
+body{
+font-family: Arial, sans-serif;
+background: #0e1728;
+margin:0;
+padding:0;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+
+/* Main Container */
+.container{
+width:420px;
+max-height:90vh;
+
+/* Attractive gradient */
+background: linear-gradient(135deg, #1f4fd6, #6fd3ff);
+
+/* Glass effect */
+backdrop-filter: blur(10px);
+
+/* Spacing */
+padding:30px;
+
+/* Rounded card */
+border-radius:18px;
+
+/* Soft border */
+border:1px solid rgba(255,255,255,0.3);
+
+/* Stronger shadow */
+box-shadow:0 10px 30px rgba(0,0,0,0.25);
+
+overflow-y:auto;
+text-align:center;
+
+/* Smooth animation */
+transition:all 0.3s ease;
+}
+
+/* Hover effect */
+.container:hover{
+transform:translateY(-5px);
+box-shadow:0 15px 40px rgba(0,0,0,0.35);
+}
+
+/* Heading */
+h1{
+margin-top:0;
+color:#000000;
+}
+
+.tagline{
+color:#666;
+margin-bottom:20px;
+}
+
+/* Mood Buttons */
+.mood-buttons{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:10px;
+margin-bottom:20px;
+}
+
+.mood-buttons button{
+padding:10px;
+border:none;
+background:#4a6cf7;
+color:white;
+border-radius:6px;
+cursor:pointer;
+font-size:14px;
+}
+
+.mood-buttons button:hover{
+background:#3556d6;
+}
+
+/* Result Section */
+.result-box{
+margin-top:15px;
+}
+
+/* Cards */
+.card{
+background:#f9f9ff;
+padding:12px;
+margin-top:10px;
+border-radius:8px;
+box-shadow:0 2px 6px rgba(0,0,0,0.05);
+}
+
+.card h3{
+margin:0;
+font-size:15px;
+}
+
+/* Timer Circle */
+.circle{
+margin:20px auto;
+width:140px;
+height:140px;
+position:relative;
+}
+
+svg{
+transform:rotate(-90deg);
+width:140px;
+height:140px;
+}
+
+circle{
+fill:none;
+stroke-width:10;
+stroke:#ddd;
+}
+
+#progress{
+stroke:#4a6cf7;
+stroke-dasharray:377;
+stroke-dashoffset:377;
+transition:stroke-dashoffset 1s linear;
+}
+
+.time-text{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+font-size:22px;
+font-weight:bold;
+}
+
+/* Analytics */
+.analytics{
+margin-top:15px;
+background:#f4f6fb;
+padding:10px;
+border-radius:8px;
+}
+
+/* Back Button */
+.back-btn{
+display:inline-block;
+margin-top:15px;
+text-decoration:none;
+color:white;
+background:#2ecc71;
+padding:10px 15px;
+border-radius:6px;
+}
+
+.back-btn:hover{
+background:#27ae60;
+}
+
+/* ================= HEADINGS ================= */
+
+h1 {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+.tagline {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+/* ================= BUTTONS ================= */
+
+.mood-buttons button {
+    margin: 10px;
+    padding: 12px 22px;
+    border: none;
+    border-radius: 8px;
+    background: #0d3b66;
+    color: #FFF8E7;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.mood-buttons button:hover {
+    background: #144f8b;
+    transform: scale(1.05);
+}
+
+/* ================= RESULT BOX ================= */
+
+.result-box {
+    margin-top: 30px;
+    padding: 25px;
+    border-radius: 12px;
+    background: white;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    display: none;
+}
+
+/* ================= AI THINKING ================= */
+
+.ai-thinking {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    animation: blink 1s infinite alternate;
+}
+
+@keyframes blink {
+    from { opacity: 0.4; }
+    to { opacity: 1; }
+}
+
+/* ================= CARDS ================= */
+
+.recommendations {
+    display: none;
+}
+
+.card {
+    background: #f5f9ff;
+    padding: 15px;
+    margin: 12px auto;
+    width: 80%;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 0.6s ease;
+}
+
+.card.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ================= CIRCULAR TIMER ================= */
+
+.circle {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: 25px auto;
+}
+
+svg {
+    width: 150px;
+    height: 150px;
+    transform: rotate(-90deg);
+}
+
+circle {
+    fill: none;
+    stroke-width: 10;
+    stroke: #e0e0e0;
+}
+
+#progress {
+    stroke: #0d3b66;
+    stroke-linecap: round;
+    stroke-dasharray: 377;
+    stroke-dashoffset: 377;
+    transition: stroke-dashoffset 1s linear;
+}
+
+.time-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* ================= ANALYTICS ================= */
+
+.analytics {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+/* ================= MOOD BACKGROUND THEMES ================= */
+
+.focused { background: linear-gradient(to right, #e6f0ff, #ffffff); }
+.tired { background: linear-gradient(to right, #fef6e4, #ffffff); }
+.stressed { background: linear-gradient(to right, #fff0f3, #ffffff); }
+.motivated { background: linear-gradient(to right, #dbeafe, #ffffff); }
+
+/* ================= BACK BUTTON ================= */
+
+.back-btn {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 10px 18px;
+    background: #0d3b66;
+    color: #FFF8E7;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: 0.3s ease;
+}
+
+.back-btn:hover {
+    background: #144f8b;
+    transform: translateX(-5px);
+}

@@ -1,0 +1,222 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background: #f4f6fb;
+  display: flex;
+}
+
+/* ===== Layout ===== */
+.container {
+  display: flex;
+  width: 100%;
+}
+
+/* ===== Sidebar ===== */
+.sidebar {
+  width: 260px;
+  background: #111827;
+  color: white;
+  padding: 30px 20px;
+  min-height: 100vh;
+  transition: 0.3s ease;
+}
+/* ===== Sidebar Base ===== */
+.sidebar {
+  width: 260px;
+  transition: width 0.3s ease;
+  overflow: hidden; /* prevents text overflow */
+}
+
+/* ===== Collapsed State ===== */
+.sidebar.collapsed {
+  width: 80px;
+}
+
+/* Hide ALL text completely */
+.sidebar.collapsed span,
+.sidebar.collapsed .user-details {
+  display: none;
+}
+
+/* Center icons */
+.sidebar.collapsed .nav-links a {
+  justify-content: center;
+}
+
+/* Remove extra padding when collapsed */
+.sidebar.collapsed .nav-links a {
+  padding: 14px 0;
+}
+
+.head {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.user-img img {
+  width: 60px;
+  margin-bottom: 10px;
+}
+
+.user-details .title {
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+.user-details .name {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.nav-links {
+  list-style: none;
+}
+
+.nav-links li {
+  margin-bottom: 15px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #d1d5db;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links .active a {
+  background: #1f2937;
+  color: white;
+}
+
+/* ===== Main Content ===== */
+.content {
+  flex: 1;
+  padding: 50px;
+}
+
+.main-header h1 {
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.main-header p {
+  color: #6b7280;
+  margin-bottom: 40px;
+}
+
+/* ===== Cards ===== */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+.card {
+  position: relative;
+  padding: 30px;
+  border-radius: 18px;
+  color: white;
+  overflow: hidden;
+  transition: 0.4s ease;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* Radial Glow Effect */
+.card::before {
+  content: "";
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(255,255,255,0.3), transparent);
+  top: -50px;
+  right: -50px;
+}
+
+/* Hover Lift */
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.card h3 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 14px;
+  margin-bottom: 20px;
+  opacity: 0.9;
+}
+
+.card button {
+  padding: 8px 18px;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  background: rgba(255,255,255,0.2);
+  color: white;
+  backdrop-filter: blur(5px);
+  transition: 0.3s;
+}
+
+.card button:hover {
+  background: rgba(255,255,255,0.35);
+}
+
+/* ===== Gradient Styles ===== */
+
+.gradient-blue {
+  background: linear-gradient(135deg, #3b82f6, #1e40af);
+}
+
+.gradient-green {
+  background: linear-gradient(135deg, #10b981, #065f46);
+}
+
+.gradient-purple {
+  background: linear-gradient(135deg, #8b5cf6, #5b21b6);
+}
+
+.gradient-orange {
+  background: linear-gradient(135deg, #f97316, #c2410c);
+}
+
+.gradient-pink {
+  background: linear-gradient(135deg, #ec4899, #9d174d);
+}
+
+.gradient-cyan {
+  background: linear-gradient(135deg, #06b6d4, #0e7490);
+}
+/* ===== Sidebar Collapse ===== */
+
+.sidebar.collapsed {
+  width: 80px;
+}
+
+.sidebar.collapsed .user-details,
+.sidebar.collapsed .nav-links span {
+  display: none;
+}
+
+.sidebar.collapsed .nav-links a {
+  justify-content: center;
+}
+
+.sidebar.collapsed .menu-btn {
+  right: -15px;
+}

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>EduMentor Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- ================= SIDEBAR ================= -->
+  <aside class="sidebar" id="sidebar">
+
+    <div class="menu-btn" onclick="toggleSidebar()">
+      <i class="ph-bold ph-caret-left"></i>
+    </div>
+
+    <div class="head">
+      <div class="user-img">
+        <img src="{{ url_for('static', filename='img/logo.png') }}" alt="EDUNEX" />
+      </div>
+      <div class="user-details">
+        <p class="title">Smart Learning</p>
+        <p class="name">EDUNEX</p>
+      </div>
+    </div>
+
+    <ul class="nav-links">
+      <li class="active"><a href="{{ url_for('dashboard') }}"><i class="ph-bold ph-house-simple"></i>  <span>Dashboard</span></a></li>
+      <li><a href="{{ url_for('create_question_paper') }}"><i class="ph-bold ph-brain"></i><span>IntelliMood</span></a></li>
+      <li><a href="{{ url_for('study_planner') }}"><i class="ph-bold ph-book-open"></i><span>Study Planner</span></a></li>
+      <li><a href="{{ url_for('quiz') }}"><i class="ph-bold ph-game-controller"></i><span>Quiz Games</span></a></li>
+      <li><a href="{{ url_for('question_bank') }}"><i class="ph-bold ph-folder-open"></i><span>Question Bank</span></a></li>
+      <li><a href="{{ url_for('practice') }}"><i class="ph-bold ph-check-square"></i><span>Practice Tests</span></a></li>
+      <li><a href="{{ url_for('performance') }}"><i class="ph-bold ph-chart-line"></i><span>Performance</span></a></li>
+      <li class="logout"><a href="{{ url_for('logout') }}"><i class="ph-bold ph-sign-out"></i><span>Logout</span></a></li>
+    </ul>
+
+  </aside>
+
+  <!-- ================= MAIN CONTENT ================= -->
+  <main class="content">
+
+    <header class="main-header">
+      <h1>Dashboard</h1>
+      <p>Quick access to all your essential learning tools and features.</p>
+    </header>
+
+    <section class="cards">
+
+      <div class="card gradient-blue">
+        <h3>IntelliMood Engine</h3>
+        <p>Your mood. Your pace. Your success.</p>
+        <a href="{{ url_for('create_question_paper') }}">
+          <button>Explore</button>
+        </a>
+      </div>
+
+      <div class="card gradient-green">
+        <h3>Study Planner</h3>
+        <p>Make your plan and show the result.</p>
+        <a href="{{ url_for('study_planner') }}">
+          <button>Set Plan</button>
+        </a>
+      </div>
+
+      <div class="card gradient-purple">
+        <h3>Quiz Games</h3>
+        <p>Smart quizzes that adapt to your learning level.</p>
+        <a href="{{ url_for('quiz') }}">
+          <button>Play Now</button>
+        </a>
+      </div>
+
+      <div class="card gradient-orange">
+        <h3>Question Bank</h3>
+        <p>Frequently asked exam questions.</p>
+        <a href="{{ url_for('question_bank') }}">
+          <button>Explore</button>
+        </a>
+      </div>
+
+      <div class="card gradient-pink">
+        <h3>Practice Tests</h3>
+        <p>Practice smarter and track improvement.</p>
+        <a href="{{ url_for('practice') }}">
+          <button>Start Test</button>
+        </a>
+      </div>
+
+      <div class="card gradient-cyan">
+        <h3>Performance Analytics</h3>
+        <p>Visual insights to track progress.</p>
+        <a href="{{ url_for('performance') }}">
+          <button>View Analytics</button>
+        </a>
+      </div>
+
+    </section>
+
+  </main>
+
+</div>
+
+<script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+</body>
+</html>

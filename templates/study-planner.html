@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/study.css') }}" />
+    <title> Project</title>
+</head>
+<body>
+ {% extends "base.html" %}
+
+{% block title %}Study Planner | EDUNEX{% endblock %}
+
+{% block content %}
+<div class="planner-card">
+
+    <div class="planner-header">
+        <h1>Study Planner</h1>
+        <p>Plan • Track • Achieve</p>
+    
+
+    <!-- Progress Section -->
+    <div class="progress-section">
+        <div class="task-count">
+            <span id="completedCount">0</span> /
+            <span id="totalCount">0</span> Tasks Completed
+        </div>
+
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+    </div>
+
+    <!-- Calendar -->
+    <div class="calendar-section">
+        <input type="date" id="taskDate">
+    </div>
+
+    <!-- Input Section -->
+    <div class="input-section">
+        <input type="text" placeholder="Enter your task..." id="inputBox">
+        <button id="addBtn">Add</button>
+    </div>
+  <p>Completed: <span id="completedCount">0</span></p>
+    <ul class="todoList" id="todoList"></ul>
+    <div class="back-btn-container">
+    <a href="{{ url_for('dashboard') }}" class="back-btn">
+        ← Back to Dashboard
+    </a>
+</div>
+    </div>
+</div>
+
+<div id="notification" class="notification"></div>
+
+      <script src="{{ url_for('static', filename='js/study.js') }}" defer></script>
+
+
+{% endblock  %}
+</body>
+</html>

@@ -1,0 +1,131 @@
+body{
+font-family: Arial, sans-serif;
+background: linear-gradient(135deg,#1c326b,#3c6be0);
+margin:0;
+padding:0;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+
+/* Main Quiz Card */
+.quiz-container{
+width:480px;
+background: linear-gradient(135deg, #087894, #f2f6ff);
+padding:30px;
+border-radius:18px;
+box-shadow:0 10px 30px rgba(0,0,0,0.25);
+text-align:center;
+}
+
+/* Heading */
+.quiz-container h2{
+margin-bottom:20px;
+color:#1c326b;
+}
+
+/* Upload box */
+.upload-box{
+margin-bottom:20px;
+}
+
+.upload-box input{
+padding:8px;
+margin-bottom:10px;
+width:100%;
+}
+
+.upload-box button{
+padding:10px 20px;
+border:none;
+background:#031d5e;
+color:white;
+border-radius:6px;
+cursor:pointer;
+font-size:15px;
+}
+
+.upload-box button:hover{
+background:#2a4fb3;
+}
+
+/* Header section */
+.quiz-header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:10px;
+font-weight:bold;
+}
+
+/* Timer */
+.timer{
+color:#ff5c5c;
+}
+
+/* Progress bar */
+.progress-bar{
+width:100%;
+height:8px;
+background:#eee;
+border-radius:10px;
+overflow:hidden;
+margin-bottom:20px;
+}
+
+#progressFill{
+height:100%;
+width:10%;
+background:#3c6be0;
+transition:0.4s;
+}
+
+/* Question card */
+.question-card{
+background:#f4f6ff;
+padding:20px;
+border-radius:12px;
+margin-bottom:20px;
+}
+
+.question-card h3{
+margin-top:0;
+}
+
+/* Options */
+.option{
+padding:12px;
+margin:10px 0;
+background:white;
+border-radius:8px;
+border:1px solid #ddd;
+cursor:pointer;
+transition:0.2s;
+}
+
+.option:hover{
+background:#e8edff;
+border-color:#3c6be0;
+}
+
+.option.selected{
+background:#3c6be0;
+color:white;
+border:none;
+}
+
+/* Next button */
+.next-btn{
+padding:10px 25px;
+border:none;
+background:#27ae60;
+color:white;
+font-size:15px;
+border-radius:6px;
+cursor:pointer;
+}
+
+.next-btn:hover{
+background:#1e874b;
+}
